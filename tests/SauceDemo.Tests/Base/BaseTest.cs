@@ -24,13 +24,8 @@ public class BaseTest
 
     [SetUp]
     public void SetUp()
-    {   
-        // You can set these values based on your test configuration
-        // or read them from a configuration file
-        
-        // WebDriverType webDriverType = WebDriverType.Selenium;
-        // BrowserType browserType = BrowserType.Chrome;     
-        driver = WebDriverFactory.Create(TestConfig.WebDriverType, TestConfig.BrowserType);
+    {
+        driver = WebDriverFactory.Create(TestConfig.WebDriverType, TestConfig.BrowserType, TestConfig.Headless);
     }
 
     [TearDown]
@@ -42,13 +37,4 @@ public class BaseTest
             driver.Dispose();
         }
     }
-    
-    // [OneTimeTearDown]
-    // public void OneTimeTearDown()
-    // {
-    //     if (driver != null)
-    //     {
-    //         driver.Dispose();
-    //     }
-    // }    
 }

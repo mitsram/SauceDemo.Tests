@@ -21,4 +21,47 @@ This project contains automated tests for the SauceDemo application, utilizing t
    dotnet test
    ```
 
-> If you're running this template for the first time, it might give you and error and suggest to run the pwsh bin/Debug/net<version>/playwright.ps1 install command. If you're using Mac, you can install powershell using brew: brew install powershell
+> If you're running this project for the first time, it might give you and error and suggest to run the pwsh bin/Debug/net<version>/playwright.ps1 install command. If you're using Mac, you can install powershell using brew: brew install powershell
+
+## Switching Between Selenium and Playwright
+
+To switch between Selenium and Playwright, follow these steps:
+
+#### Update the Test Configuration
+Modify the `appsettings.json` file to specify the desired WebDriver type. For example, to use Selenium, set:
+   ```json
+   {
+       "WebDriverType": "Selenium",
+       ...
+   }
+   ```
+   To switch back to Playwright, set:
+   ```json
+   {
+       "WebDriverType": "Playwright",
+       ...
+   }
+   ```
+
+## Other Test Configuration Options
+
+### Browser
+Modify the appsettings.json for the desired browser:
+   ```json
+   {
+       "BrowserType": "Chrome",
+       ...
+   }
+   ```
+### Headless
+Accepts true or false:
+   ```json
+   {
+      ...
+      "TestSettings": {
+         "BaseUrl": "https://www.saucedemo.com",
+         "Headless": false,
+         "Timeout": 30
+      }
+   }
+   ```
